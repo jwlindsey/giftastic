@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<!--Used normalize instead of reset due to this being a simpler program-->
-    <link rel="normalize" href="assets/css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Giftastic</title>
-  </head>
-  <body class="full">
-    <header>
-      Welcome to giftastic happiness. Happy clicking!
-    </header>
 
-    <div class="searchBox">
-	<form action="" method="">
-		<input type="search" placeholder="What are you looking for in life?">
-		<button>Search</button>
-	</form>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <!--Used normalize instead of reset due to this being a simpler program-->
+  <link rel="normalize" href="assets/css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Giftastic</title>
+</head>
 
+<body class="full">
+  <!--Welcoming header-->
+  <header>
+    Welcome to giftastic happiness. Happy clicking!
+  </header>
+  <!--Dynamic button div-->
+  <div class="gifButtons"></div>
+  <!--Search box div-->
+  <div class="searchDiv">
+    <form action="" method="">
+      <input type="search" id="searchBox" placeholder="What Gif do you want?">
+      <button>Search</button>
+    </form>
+  </div>
+  <!--Results of search div-->
+  <div class="results"></div>
 
-<!-- Jquery CDN and Javascript tags-->
-    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-    <script rel="javascript" type="text/javascript" src="assets/javascript/gif.js"></script>
-  </body>
-  <footer class="foot"></footer>
+  <!-- Jquery CDN and Javascript tags-->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script rel="javascript" type="text/javascript" src="assets/javascript/gif.js"></script>
+</body>
+<footer class="foot"></footer>
 </html>

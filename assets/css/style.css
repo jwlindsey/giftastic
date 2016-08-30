@@ -14,23 +14,23 @@ header {
   -o-background-size: repeat;
 }
 
-.searchBox {
+.searchDiv {
   float: right;
 }
 
-.searchBox:before {
+.searchDiv:before {
 	background: #444;
 	background: linear-gradient(left, #151515, #444, #151515);
 	top: 192px;
 }
 
-.searchBox:after {
+.searchDiv:after {
 	background: #000;
 	background: linear-gradient(left, #151515, #000, #151515);
 	top: 191px;
 }
 
-.searchBox form {
+.searchDiv form {
 	background: #111;
 	background: linear-gradient(#1b1b1b, #111);
 	border: 1px solid #000;
@@ -43,7 +43,7 @@ header {
 	z-index: 1;
 }
 
-.searchBox input {
+.searchDiv input {
 	background: #222;
 	background: linear-gradient(#333, #222);
 	border: 1px solid #444;
@@ -62,19 +62,19 @@ header {
 	width: 200px;
 }
 
-.ie .searchBox input {
+.ie .searchDiv input {
 	line-height: 40px;
 }
 
-.searchBox input::-webkit-input-placeholder {
+.searchDiv input::-webkit-input-placeholder {
    color: #888;
 }
 
-.searchBox input:-moz-placeholder {
+.searchDiv input:-moz-placeholder {
    color: #888;
 }
 
-.searchBox input:focus {
+.searchDiv input:focus {
 	animation: glow 800ms ease-out infinite alternate;
 	background: #222922;
 	background: linear-gradient(#333933, #222922);
@@ -84,15 +84,15 @@ header {
 	outline: none;
 }
 
-.searchBox input:focus::-webkit-input-placeholder {
+.searchDiv input:focus::-webkit-input-placeholder {
 	color: #efe;
 }
 
-.searchBox input:focus:-moz-placeholder {
+.searchDiv input:focus:-moz-placeholder {
 	color: #efe;
 }
 
-.searchBox button {
+.searchDiv button {
 	background: #222;
 	background: linear-gradient(#333, #222);
 	box-sizing: content-box;
@@ -115,15 +115,15 @@ header {
 	width: 80px;
 }
 
-.searchBox button:hover,
-.searchBox button:focus {
+.searchDiv button:hover,
+.searchDiv button:focus {
 	background: #292929;
 	background: linear-gradient(#393939, #292929);
 	color: #5f5;
 	outline: none;
 }
 
-.searchBox button:active {
+.searchDiv button:active {
 	background: #292929;
 	background: linear-gradient(#393939, #292929);
 	box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
