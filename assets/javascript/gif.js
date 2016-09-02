@@ -6,10 +6,11 @@
 //<div class="results">
 
 //inital search array
-var gifsArray = ["dogs", "cats", "mice", "salamanders", "aliens", "humans"];
+var gifsArray = ["dogs", "mice", "salamanders", "aliens", "humans"];
 //display search function - renders the search parameters into html
 function searchGifs (){
 
+  $(".results").empty();
   var animal = $(this).attr("data-animal");
   var queryURL =  "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 //create Ajax call for specific gifs
@@ -18,11 +19,11 @@ $.ajax({
   method: "GET",
   datatype: "json"})
   .done(function(response) {
-  console.log(response);
+  //console.log(response);
 
   for (var a=0; a<response.data.length; a++){
-    console.log(response.data);
-
+    //console.log(response.data);
+    //grab responses from giphy and append to results element in html
     var p = $("<p>").text("Rating: " + response.data[a].rating);
     var gifImage = $("<img>")
       .attr("src", response.data[a].images.fixed_height_still.url)
@@ -32,7 +33,7 @@ $.ajax({
       .addClass("gifResult");
 
     gifImage.append(p);
-    $(".results").append(gifImage);
+    $(".results").prepend(gifImage);
   }
 });
 }
@@ -77,6 +78,7 @@ function pausePlay(){
     $(this).attr("data-state", "still");
     console.log("animate");
   }
+  $(document).on("click", ".gifsArray", searchGifs);
 }
 //display gif information
 $(document).on("click", ".gifsArray", searchGifs);
