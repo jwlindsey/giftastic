@@ -6,7 +6,7 @@
 //<div class="results">
 
 //inital search array
-var gifsArray = ["dogs", "mice", "salamanders", "aliens", "humans"];
+var gifsArray = ["mice", "men", "murder", "death", "kill"];
 //display search function - renders the search parameters into html
 function searchGifs (){
 
@@ -24,7 +24,8 @@ $.ajax({
   for (var a=0; a<response.data.length; a++){
     //console.log(response.data);
     //grab responses from giphy and append to results element in html
-    var p = $("<p>").text("Rating: " + response.data[a].rating);
+    var p = $("<p>").html("Rating: " + response.data[a].rating);
+    console.log(response.data[a].rating);
     var gifImage = $("<img>")
       .attr("src", response.data[a].images.fixed_height_still.url)
       .attr("data-still", response.data[a].images.fixed_height_still.url)
@@ -32,7 +33,7 @@ $.ajax({
       .attr("data-state", "still")
       .addClass("gifResult");
 
-    gifImage.append(p);
+    $("gifImage").append(p);
     $(".results").prepend(gifImage);
   }
 });
@@ -42,6 +43,9 @@ $.ajax({
 function renderButtons(){
 //deletes gifs prior to adding a new gifs to cut down on repeat buttons
   $(".gifButtons").empty();
+
+  //if ($("#search-box").val() !== "") {
+
 //loops through array of gifs
   for (var i = 0; i < gifsArray.length; i++) {
 //generate buttons for each gif in the array
@@ -50,8 +54,13 @@ function renderButtons(){
   a.attr("data-animal", gifsArray[i]);
   a.html(gifsArray[i]);
   $(".gifButtons").append(a);
+//}
 }
 }
+
+//$('#search-box').on('click',function(){
+//  renderButtons();
+//});
 
 //function for search click
 $("#form").on("submit", function(event){
