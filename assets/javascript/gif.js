@@ -25,6 +25,7 @@ $.ajax({
     //console.log(response.data);
     //grab responses from giphy and append to results element in html
     var p = $("<p>").html("Rating: " + response.data[a].rating);
+    
     console.log(response.data[a].rating);
     var gifImage = $("<img>")
       .attr("src", response.data[a].images.fixed_height_still.url)
@@ -34,7 +35,7 @@ $.ajax({
       .addClass("gifResult");
 
     $("gifImage").append(p);
-    $(".results").prepend(gifImage);
+    $(".results").prepend(gifImage, p);
   }
 });
 }
@@ -54,24 +55,22 @@ function renderButtons(){
   a.attr("data-animal", gifsArray[i]);
   a.html(gifsArray[i]);
   $(".gifButtons").append(a);
+}
+}
 //}
-}
-}
-
-//$('#search-box').on('click',function(){
-//  renderButtons();
-//});
-
 //function for search click
 $("#form").on("submit", function(event){
   event.preventDefault();//same as return false at the end of the function
 //grab input from search box
   var gifSearch = $("#search-box").val().trim();
+
+if ($("#gifSearch").val() !== "") {
 //push from search box into the array
   gifsArray.push(gifSearch);
 //run our renderbuttons function to process through our array
   renderButtons();
   $("#search-box").val("");
+}
 });
 
 //function for pause and play of gifs
